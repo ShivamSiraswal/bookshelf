@@ -4,7 +4,7 @@ var action = 'login';
 let notf = null;
 var form_title = document.querySelector('span.login100-form-title');
 const $ =(e)=> document.querySelectorAll(e);
-const server = new WebSocket('wss://teal-erratic-exoplanet.glitch.me',['mainserver']);
+const server = new WebSocket('wss://bookshelf-server.glitch.me',['mainserver']);
 server.onopen = () => ld.discard();
 
 
