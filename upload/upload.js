@@ -1,6 +1,6 @@
 let ld = new Loader('loading');
 ld.load();
-const server = new WebSocket('wss://teal-erratic-exoplanet.glitch.me',['mainserver']);
+const server = new WebSocket('wss://bookshelf-server.glitch.me',['mainserver']);
 server.onopen =()=>{
   ld.discard()
 }
