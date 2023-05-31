@@ -59,7 +59,7 @@ function showbook(el){
   showbook_name.innerText = el.dataset.title;
   showbook_from.innerText = el.dataset.from;
   window.activebook_id = el.dataset._id;
-  alert(el.dataset.incart);
+ // alert(el.dataset.incart);
   if (el.dataset.incart!==null && el.dataset.incart!=="undefined" && el.dataset.incart!=="null" && el.dataset.incart!="false"){
     //console.log(el.dataset.incart);
     btnaddtocart.innerText = "remove from cart";
