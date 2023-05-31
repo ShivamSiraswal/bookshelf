@@ -327,6 +327,16 @@ div.book:hover>.details {
   }
 }
 
+@media screen and (min-width : 700px){
+  div.book {
+    width: 250px;
+  }
+  #bookpane {
+    padding: 0px 200px;
+  }
+}
+
+
 .royalblue {
   color : royalblue;
 }
