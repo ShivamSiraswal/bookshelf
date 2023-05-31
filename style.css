@@ -279,7 +279,7 @@ div.book:hover>.details {
   border-radius: 10px;
 }
 #buybooknowpane img {
-  max-width: 90vw;
+  max-width: 400px;
 }
 #myuploadscont {
   padding: 20px;

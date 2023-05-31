@@ -60,6 +60,20 @@ function showbook(el){
   showbook_from.innerText = el.dataset.from;
   window.activebook_id = el.dataset._id;
  // alert(el.dataset.incart);
+ 
+ let book = {
+   title: el.dataset.title,
+    cost: el.dataset.cost,
+    cover : el.dataset.src,
+    by: el.dataset.by,
+    author: el.dataset.author,
+    from: el.dataset.from,
+    _id: el.dataset._id,
+    //dummy : el.dataset.dummy
+    //incart : window._cart?.find((v)=>v==res._id) || null
+ }
+ window.ToBuyBook = book;
+ 
   if (el.dataset.incart!==null && el.dataset.incart!=="undefined" && el.dataset.incart!=="null" && el.dataset.incart!="false"){
     //console.log(el.dataset.incart);
     btnaddtocart.innerText = "remove from cart";
@@ -75,10 +89,12 @@ function buybooknow(book){
   //console.log(book);
   //document.getElementById('bookpane').click()
   document.getElementById('cartpane').style.display = 'none' ;
+  document.getElementById('bookdetailpane').style.display = 'none' ;
   document.getElementById('buybooknowpane').style.display = 'block' ;
   buying_cost.innerText = book.cost;
   buying_title.innerText = book.title;
   buying_img.src = book.cover;
+  //console.log(book);
   buying_delivery_charge = parseFloat(book.cost)*10/100 + ' INR';
   
 }
