@@ -7,6 +7,7 @@ let dummybooks = [
     by : "sureshkumar@8363",
     from : '53-A Chanduli Nagar, Delhi',
     _id : 'dummy001',
+    phone : 8057428072,
     dummy : true
 },{
     title: 'Organic Chemestry class 11',
@@ -15,6 +16,7 @@ let dummybooks = [
     cost: '₹ 120',
     by: "surajk9189",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 9739282933,
     _id: 'dummy002',
     dummy: true
     
@@ -25,6 +27,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 1837392749,
     _id: 'dummy003',
     dummy: true
 },{
@@ -34,6 +37,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 9474938383,
     _id: 'dummy004',
     dummy: true
 },{
@@ -43,6 +47,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 8272927392,
     _id: 'dummy005',
     dummy: true
 },{
@@ -52,6 +57,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 8593740263,
     _id: 'dummy006',
     dummy: true
 },{
@@ -61,6 +67,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 6882639373,
     _id: 'dummy007',
     dummy: true
 },{
@@ -70,6 +77,7 @@ let dummybooks = [
     cost: '₹ 920',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 7393729173,
     _id: 'dummy008',
     dummy: true
 },{
@@ -79,6 +87,7 @@ let dummybooks = [
     cost: '₹ 199',
     by: "RameshSingh53738",
     from: '53-A Nagpur, Gujrat',
+    phone : 2729272833,
     _id: 'dummy009',
     dummy: true
 },{
@@ -88,6 +97,7 @@ let dummybooks = [
     cost: '₹ 799',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 8493839372,
     _id: 'dummy010',
     dummy: true
 },{
@@ -97,6 +107,7 @@ let dummybooks = [
     cost: '₹ 620',
     by: "sureshkumar@8363",
     from: '53-A Chanduli Nagar, Delhi',
+    phone : 6482927393,
     _id: 'dummy011',
     dummy: true
 }]
@@ -198,6 +209,7 @@ dummybooks.forEach((res)=>{
         author: res.author,
         from: res.from,
         _id: res._id,
+        phone : res.phone,
         incart : isindummycart(res._id)
       })
       //console.log(res.from);
