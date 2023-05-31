@@ -69,6 +69,7 @@ function showbook(el){
     author: el.dataset.author,
     from: el.dataset.from,
     _id: el.dataset._id,
+    phone : el.dataset.phone
     //dummy : el.dataset.dummy
     //incart : window._cart?.find((v)=>v==res._id) || null
  }
@@ -94,8 +95,8 @@ function buybooknow(book){
   buying_cost.innerText = book.cost;
   buying_title.innerText = book.title;
   buying_img.src = book.cover;
+  buying_phone.innerText = book.phone;
   //console.log(book);
-  buying_delivery_charge = parseFloat(book.cost)*10/100 + ' INR';
   
 }
 // ====================================
@@ -231,6 +232,7 @@ function handlesearchresults(data){
         from: res.from,
         _id: res._id,
         dummy : res.dummy,
+        phone : res.phone,
         incart : window._cart?.find((v)=>v==res._id) || null
       })
       //console.log(res.from);
@@ -243,6 +245,7 @@ function handlesearchresults(data){
       cont.innerHTML = book;
       bookpane.appendChild(cont);
     })
+    //console.log(data.results[0]?.phone);
 }
 
 //===========================================
@@ -319,7 +322,7 @@ function deleteaccount(){
   let confirmation = confirm('Do you really want to delete your account ? this action cannot be reversed.');
   if (!confirmation) return;
   server.send(JSON.stringify({
-    type : 'deleteaccount',
+    type : 'accountDelete',
     username : JSON.parse(localStorage.getItem('bkshelf_0.0.1_userdata')).username
   }));
   notif.text = 'deleting account';
@@ -329,7 +332,7 @@ function deleteaccount(){
 }
 
 function handleuserinfo(data){
-  console.log(data);
+  //console.log(data);
   account_name.innerText = 'Welcome ' + data.name;
   account_username.innerText = data.username;
 }
