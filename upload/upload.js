@@ -1,6 +1,8 @@
 let ld = new Loader('loading');
 ld.load();
 const server = new WebSocket('wss://bookshelf-server.glitch.me',['mainserver']);
+//const server = new WebSocket('ws://localhost:8080',['mainserver']);
+
 server.onopen =()=>{
   ld.discard()
 }
@@ -28,7 +30,8 @@ function upload(){
     author : bookauthor.value,
     cost : bookcost.value,
     cover : preview.src,
-    by : JSON.parse(localStorage.getItem('bkshelf_0.0.1_userdata')).username
+    by : JSON.parse(localStorage.getItem('bkshelf_0.0.1_userdata')).username,
+    phone : JSON.parse(localStorage.getItem('bkshelf_0.0.1_userdata')).phone
   })
   server.send(obj);
   //console.log(obj);
