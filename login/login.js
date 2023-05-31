@@ -5,11 +5,12 @@ let notf = null;
 var form_title = document.querySelector('span.login100-form-title');
 const $ =(e)=> document.querySelectorAll(e);
 const server = new WebSocket('wss://bookshelf-server.glitch.me',['mainserver']);
+//const server = new WebSocket('ws://localhost:8080',['mainserver']);
 server.onopen = () => ld.discard();
 
 
 function tglwork(self){
-  console.log(self.innerText);
+  //console.log(self.innerText);
   if (self.innerText.includes('Create')) {
     self.innerText = self.innerText.replace('Create your Account','Already have an account ? login');
     action = 'signup';
@@ -17,6 +18,7 @@ function tglwork(self){
     loginbtn.innerText = 'signup';
     $('#name')[0].style.display = 'block';
     $('#address')[0].style.display = 'block';
+    $('#phone')[0].style.display = 'block';
   } else {
     self.innerText = self.innerText.replace('Already have an account ? login','Create your Account');
     action = 'login';
@@ -24,6 +26,7 @@ function tglwork(self){
     loginbtn.innerText = 'login';
     $('#name')[0].style.display = 'none';
     $('#address')[0].style.display = 'none';
+    $('#phone')[0].style.display = 'none';
   }
 }
 
@@ -37,6 +40,7 @@ $('#loginbtn')[0].onclick = (e) => {
   if(action=='signup'){
     obj.name = nameinp.value;
     obj.address = addressinp.value;
+    obj.phone = phoneinp.value;
   }
   server.send(JSON.stringify(obj));
   notf = new Notif('Waiting For Response',true);
@@ -46,6 +50,7 @@ $('#loginbtn')[0].onclick = (e) => {
 server.onmessage = (e) => {
   notf.hide();
   let data = JSON.parse(e.data);
+  //alert(JSON.stringify(data.userdata));
   let notf2 = new Notif(data.desc,true);
   notf2.show();
   if (data.type == 'success'){
@@ -55,6 +60,6 @@ server.onmessage = (e) => {
     }))) ;
     location.href = location.href.replace('/login','');
   } else {
-    alert(JSON.stringify(data));
+    //alert(JSON.stringify(data));
   }
 }
